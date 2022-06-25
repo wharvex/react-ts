@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { RandomMaker } from './components/RandomMaker';
+import { Header } from './components/Header';
 
 function App() {
+  const [min, setMin] = useState(4);
+  const [max, setMax] = useState(8);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header>Input Min and Max</Header>
+      <label>
+        Min: <input type="number" value={min} onChange={(e) => setMin(Number(e.target.value))} />
+      </label>
+      <br />
+      <label>
+        Max: <input type="number" value={max} onChange={(e) => setMax(Number(e.target.value))} />
+      </label>
+
+      <RandomMaker min={min} max={max} />
+
     </div>
   );
 }
