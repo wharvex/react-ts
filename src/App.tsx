@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header>Input Min and Max</Header>
+      <Header>Inpuuuut Min and Max</Header>
       <label>
         Min: <input type="number" value={min} onChange={(e) => setMin(Number(e.target.value))} />
       </label>
